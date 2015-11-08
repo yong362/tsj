@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MvcMovie.Models.test>
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Index</h2>
+<p>
+    @using (Html.BeginForm("Index", "tests", FormMethod.Get))
+    {
+    <p>
+        Genre: @Html.DropDownList("saleperson", "All")
+        Title: @Html.TextBox("Location")
+        <input type="submit" value="Filter" />
+    </p>
+    }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Residence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesPerson)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemBought)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthBought)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sales)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Residence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemBought)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthBought)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sales)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
