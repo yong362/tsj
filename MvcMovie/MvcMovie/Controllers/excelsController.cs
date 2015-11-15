@@ -10,10 +10,11 @@ using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    public class testsController : Controller
+    public class excelsController : Controller
     {
         private MovieDBContext db = new MovieDBContext();
 
+        // GET: excels
         public ActionResult Index(string saleperson, string Location)
         {
             var GenreLst = new List<string>();
@@ -41,7 +42,7 @@ namespace MvcMovie.Controllers
             return View(movies);
         }
 
-        // GET: Assets/Details/5
+        // GET: excels/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -56,18 +57,18 @@ namespace MvcMovie.Controllers
             return View(excel);
         }
 
-        // GET: Assets/Create
+        // GET: excels/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Assets/Create
+        // POST: excels/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,CustomerName,Email,Residence,SalesPerson,ItemBought,MonthBought,Price,Qty,Sales")]  excel excel)
+        public ActionResult Create([Bind(Include = "ID,CreatedBy,EquipmentName,ReleaseDate,TypeofAssets,Barcode,Location,RoomName")] excel excel)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace MvcMovie.Controllers
             return View(excel);
         }
 
-        // GET: Assets/Edit/5
+        // GET: excels/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,12 +95,12 @@ namespace MvcMovie.Controllers
             return View(excel);
         }
 
-        // POST: Assets/Edit/5
+        // POST: excels/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,CustomerName,Email,Residence,SalesPerson,ItemBought,MonthBought,Price,Qty,Sales")] excel excel)
+        public ActionResult Edit([Bind(Include = "ID,CreatedBy,EquipmentName,ReleaseDate,TypeofAssets,Barcode,Location,RoomName")] excel excel)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +111,7 @@ namespace MvcMovie.Controllers
             return View(excel);
         }
 
-        // GET: Assets/Delete/5
+        // GET: excels/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,7 +126,7 @@ namespace MvcMovie.Controllers
             return View(excel);
         }
 
-        // POST: Assets/Delete/5
+        // POST: excels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -18,7 +18,7 @@ namespace MvcMovie.Models
     public class Asset
     {
         public int ID { get; set; }
-         [Display(Name = "Created By")]
+        [Display(Name = "Created By")]
         public string CreatedBy {get;set;}
         [Display(Name = "Equipment Name")]
         public string Name { get; set; }
@@ -34,25 +34,24 @@ namespace MvcMovie.Models
         public string roomName { get; set; }
       
     }
-    public class test
+    public class excel
     {
         public int ID { get; set; }
-        public String CustomerName { get; set; }
         [Display(Name = "Created By")]
-        public string Email { get; set; }
+        public string CreatedBy{get;set;}
         [Display(Name = "Equipment Name")]
-        public string Residence { get; set; }
-        public string SalesPerson { get; set; }
-        public string ItemBought { get; set; }
+        public string  EquipmentName{get;set;}
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime MonthBought { get; set; }
+        public DateTime ReleaseDate   {get;set;}
         [Display(Name = "Type of Assets")]
-        public string Price { get; set; }
+        public string TypeofAssets{get;set;}
+        public string Barcode     {get;set;}
+        public string Location   {get;set;}
         [Display(Name = "Room Name")]
-        public int Qty { get; set; }
-        public int Sales { get; set; }
+        public string RoomName   {get;set;}
+
     }
     public class MovieDBContext : DbContext
     {
@@ -61,7 +60,7 @@ namespace MvcMovie.Models
         {
         }
         public DbSet<Movie> Movies { get; set; }
-        public System.Data.Entity.DbSet<MvcMovie.Models.test> test { get; set; }
+        public System.Data.Entity.DbSet<MvcMovie.Models.excel> excel { get; set; }
         public System.Data.Entity.DbSet<MvcMovie.Models.Asset> Assets { get; set; }
     }
    

@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AssetsController.cs" />
+    <Compile Include="Controllers\excelsController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -195,6 +196,10 @@
     <Compile Include="Migrations\201511061153184_updatedatabase1.Designer.cs">
       <DependentUpon>201511061153184_updatedatabase1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511151205123_final1.cs" />
+    <Compile Include="Migrations\201511151205123_final1.Designer.cs">
+      <DependentUpon>201511151205123_final1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -224,7 +229,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -271,6 +278,11 @@
     <Content Include="Views\tests\Details.cshtml" />
     <Content Include="Views\tests\Edit.cshtml" />
     <Content Include="Views\tests\Index.cshtml" />
+    <Content Include="Views\excels\Create.cshtml" />
+    <Content Include="Views\excels\Delete.cshtml" />
+    <Content Include="Views\excels\Details.cshtml" />
+    <Content Include="Views\excels\Edit.cshtml" />
+    <Content Include="Views\excels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511061153184_updatedatabase1.resx">
       <DependentUpon>201511061153184_updatedatabase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511151205123_final1.resx">
+      <DependentUpon>201511151205123_final1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
